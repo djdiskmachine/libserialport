@@ -98,9 +98,6 @@ AC_SUBST([SP_LIBS])
 AM_COND_IF([FREEBSD], [SP_PKGLIBS='libusb-2.0'], [SP_PKGLIBS=])
 AC_SUBST([SP_PKGLIBS])
 
-AM_COND_IF([MACOSX], [AC_CHECK_HEADER([IOKit/IOKitLib.h], [],
-	[AC_MSG_ERROR([IOKit/IOKitLib.h not found])])])
-
 AS_CASE([$host_os], [linux*|darwin*|mingw*|freebsd*],, [
 	AC_DEFINE([NO_ENUMERATION], [1], [Enumeration is unsupported.])
 	AC_DEFINE([NO_PORT_METADATA], [1], [Port metadata is unavailable.])
